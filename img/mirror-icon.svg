@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+    
+    <linearGradient id="mirrorGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#e0e7ff"/>
+      <stop offset="100%" stop-color="#c7d2fe"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect x="10" y="10" width="108" height="108" rx="22" fill="url(#bgGrad)"/>
+  
+  <!-- Mirror frame -->
+  <rect x="34" y="28" width="60" height="72" rx="6" fill="#4c1d95" stroke="#2e1065" stroke-width="3"/>
+  
+  <!-- Mirror glass -->
+  <rect x="40" y="34" width="48" height="60" rx="3" fill="url(#mirrorGrad)"/>
+  
+  <!-- Reflection line (блик) -->
+  <path d="M 46 44 L 46 84" stroke="#ffffff" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
+  <path d="M 54 44 L 54 84" stroke="#ffffff" stroke-width="2" stroke-linecap="round" opacity="0.3"/>
+</svg>

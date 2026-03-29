@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mirror Language — Полная документация</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #e0e0e0;
+            background: #0f0f1a;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #1a1a2e;
+            padding: 40px;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.5);
+            border-radius: 12px;
+        }
+        
+        header {
+            border-bottom: 3px solid #6366f1;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            color: #00d9ff;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .version {
+            color: #888;
+            font-size: 1.1em;
+        }
+        
+        nav.toc {
+            background: #16213e;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            border: 1px solid #333;
+        }
+        
+        nav.toc h2 {
+            margin-bottom: 15px;
+            color: #00d9ff;
+        }
+        
+        nav.toc ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 10px;
+        }
+        
+        nav.toc li {
+            margin-bottom: 5px;
+        }
+        
+        nav.toc a {
+            color: #00d9ff;
+            text-decoration: none;
+        }
+        
+        nav.toc a:hover {
+            text-decoration: underline;
+        }
+        
+        section {
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #333;
+        }
+        
+        h2 {
+            color: #00d9ff;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            margin-top: 30px;
+        }
+        
+        h3 {
+            color: #00ff88;
+            font-size: 1.4em;
+            margin: 25px 0 15px 0;
+        }
+        
+        h4 {
+            color: #a0a0a0;
+            font-size: 1.1em;
+            margin: 20px 0 10px 0;
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        code {
+            background: #0d0d1a;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            color: #ff6b9d;
+        }
+        
+        pre {
+            background: #0d0d1a;
+            color: #d4d4d4;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 15px 0;
+            border: 1px solid #333;
+        }
+        
+        pre code {
+            background: none;
+            padding: 0;
+            color: inherit;
+        }
+        
+        .keyword { color: #569cd6; }
+        .string { color: #ce9178; }
+        .number { color: #b5cea8; }
+        .comment { color: #6a9955; }
+        .function { color: #dcdcaa; }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        th, td {
+            border: 1px solid #333;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        th {
+            background: #6366f1;
+            color: white;
+        }
+        
+        tr:nth-child(even) {
+            background: #16213e;
+        }
+        
+        .note {
+            background: #1a1a2e;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .warning {
+            background: #1a1a2e;
+            border-left: 4px solid #dc3545;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .tip {
+            background: #1a1a2e;
+            border-left: 4px solid #28a745;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 15px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        .example {
+            background: #16213e;
+            border: 1px solid #333;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        
+        .example-title {
+            font-weight: bold;
+            color: #00d9ff;
+            margin-bottom: 10px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #888;
+            border-top: 1px solid #333;
+        }
+        
+        footer a {
+            color: #00d9ff;
+        }
+        
+        ::selection {
+            background: #6366f1;
+            color: white;
+        }
+        
+        ::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #0f0f1a;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #6366f1;
+            border-radius: 5px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00d9ff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🪞 Mirror Language</h1>
+            <p class="version">Версия 3.0.0 | Полная документация</p>
+        </header>
+        
+        <nav class="toc">
+            <h2>📋 Содержание</h2>
+            <ul>
+                <li><a href="#intro">Введение</a></li>
+                <li><a href="#install">Установка</a></li>
+                <li><a href="#first">Первая программа</a></li>
+                <li><a href="#syntax">Синтаксис</a></li>
+                <li><a href="#types">Типы данных</a></li>
+                <li><a href="#variables">Переменные</a></li>
+                <li><a href="#operators">Операторы</a></li>
+                <li><a href="#control">Управление потоком</a></li>
+                <li><a href="#functions">Функции</a></li>
+                <li><a href="#arrays">Массивы</a></li>
+                <li><a href="#dicts">Словари</a></li>
+                <li><a href="#strings">Строки</a></li>
+                <li><a href="#errors">Обработка ошибок</a></li>
+                <li><a href="#modules">Модули</a></li>
+                <li><a href="#stdlib">Стандартная библиотека</a></li>
+                <li><a href="#examples">Примеры</a></li>
+            </ul>
+        </nav>
+        
+        <main>
+            <!-- Введение -->
+            <section id="intro">
+                <h2>📖 Введение</h2>
+                <p><strong>Mirror Language</strong> — это современный язык программирования с синтаксисом на основе отступов, созданный для того, чтобы код был читаемым как обычный текст.</p>
+                
+                <h3>Основные принципы</h3>
+                <ul>
+                    <li><strong>Читаемость:</strong> Код должен читаться как псевдокод</li>
+                    <li><strong>Простота:</strong> Минимум синтаксического шума</li>
+                    <li><strong>Отступы:</strong> 4 пробела для вложенности (никаких фигурных скобок!)</li>
+                    <li><strong>Дружелюбность:</strong> Понятные сообщения об ошибках</li>
+                </ul>
+                
+                <div class="note">
+                    <strong>📌 Примечание:</strong> Mirror использует отступы для определения блоков кода, подобно Python. Фигурные скобки <code>{}</code> используются только для словарей.
+                </div>
+            </section>
+            
+            <!-- Установка -->
+            <section id="install">
+                <h2>📦 Установка</h2>
+                
+                <h3>Способы установки</h3>
+                <ul>
+                    <li><strong>GUI установщик</strong> — рекомендуется для новичков (все платформы)</li>
+                    <li><strong>Ручная установка</strong> — для опытных пользователей (Linux/macOS)</li>
+                </ul>
+                
+                <h3>🪞 Установка через GUI</h3>
+                
+                <h4>Требования</h4>
+                <ul>
+                    <li>Python 3.6+</li>
+                    <li>PyQt6</li>
+                </ul>
+                
+                <h4>Шаг 1: Установка PyQt6</h4>
+                <pre><code class="language-bash"># Все платформы
+pip install PyQt6
+
+# Если pip не найден:
+python3 -m pip install PyQt6
+
+# На macOS (через Homebrew):
+brew install pyqt6
+
+# На Linux (через пакетный менеджер):
+sudo apt install python3-pyqt6  # Debian/Ubuntu
+sudo dnf install python3-pyqt6  # Fedora</code></pre>
+                
+                <h4>Шаг 2: Запуск установщика</h4>
+                <pre><code class="language-bash">python3 install-gui.py</code></pre>
+                
+                <div class="tip">
+                    💡 <strong>Совет:</strong> Если PyQt6 не устанавливается, попробуйте обновить pip: <code>pip install --upgrade pip</code>
+                </div>
+                
+                <h3>🔧 Ручная установка</h3>
+                
+                <h4>🐧 Linux</h4>
+                <pre><code class="language-bash"># Debian/Ubuntu
+sudo apt-get install gcc libssl-dev
+
+# Fedora
+sudo dnf install gcc openssl-devel
+
+# Arch
+sudo pacman -S gcc openssl
+
+# Компиляция
+gcc -o mirror mirror.c -lm -lssl -lcrypto -O2
+
+# Установка
+sudo cp mirror /usr/local/bin/
+sudo chmod +x /usr/local/bin/mirror
+
+# Проверка
+mirror --version</code></pre>
+                
+                <h4>🍎 macOS</h4>
+                <pre><code class="language-bash"># Xcode Command Line Tools
+xcode-select --install
+
+# OpenSSL через Homebrew
+brew install openssl
+
+# Компиляция
+gcc -o mirror mirror.c -lm -lssl -lcrypto -O2
+
+# Установка
+sudo cp mirror /usr/local/bin/
+sudo chmod +x /usr/local/bin/mirror
+
+# Проверка
+mirror --version</code></pre>
+                
+                <h4>🪟 Windows</h4>
+                <div class="note">
+                    <strong>⚠️ Примечание:</strong> Для Windows требуется MSYS2 или WSL. Рекомендуется использовать установщик GUI.
+                </div>
+                
+                <h3>Проверка установки</h3>
+                <pre><code class="language-bash">mirror --version
+mirror --help</code></pre>
+            </section>
+            
+            <!-- Первая программа -->
+            <section id="first">
+                <h2>👋 Первая программа</h2>
+                
+                <div class="example">
+                    <div class="example-title">Hello, World!</div>
+                    <pre><code><span class="keyword">echo</span>(<span class="string">"Hello, World!"</span>)</code></pre>
+                </div>
+                
+                <h3>Запуск программы</h3>
+                <pre><code class="language-bash">mirror program.mirror</code></pre>
+                
+                <h3>Интерактивный режим (REPL)</h3>
+                <pre><code class="language-bash">mirror --repl</code></pre>
+            </section>
+            
+            <!-- Синтаксис -->
+            <section id="syntax">
+                <h2>📝 Синтаксис</h2>
+                
+                <h3>Отступы</h3>
+                <p>Для определения блоков кода используются отступы:</p>
+                <ul>
+                    <li><strong>4 пробела</strong> = один уровень вложенности</li>
+                    <li>Табуляция приравнивается к 4 пробелам</li>
+                    <li>Несогласованные отступы вызывают ошибку</li>
+                </ul>
+                
+                <div class="example">
+                    <div class="example-title">Правильно:</div>
+                    <pre><code><span class="keyword">func</span> greet(name):
+    <span class="keyword">if</span> name:
+        <span class="keyword">echo</span>(<span class="string">"Hello, "</span> + name)
+    <span class="keyword">else</span>:
+        <span class="keyword">echo</span>(<span class="string">"Hello!"</span>)</code></pre>
+                </div>
+                
+                <h3>Комментарии</h3>
+                <pre><code><span class="comment"># Однострочный комментарий</span>
+
+<span class="comment">/*
+   Многострочный
+   комментарий
+*/</span></code></pre>
+                
+                <h3>Двоеточие</h3>
+                <p>Двоеточие <code>:</code> используется после заголовков конструкций:</p>
+                <ul>
+                    <li>После параметров функции</li>
+                    <li>После условия if/while</li>
+                    <li>После ключевого слова try/catch/finally</li>
+                </ul>
+            </section>
+            
+            <!-- Типы данных -->
+            <section id="types">
+                <h2>🔤 Типы данных</h2>
+                
+                <table>
+                    <tr>
+                        <th>Тип</th>
+                        <th>Описание</th>
+                        <th>Пример</th>
+                    </tr>
+                    <tr>
+                        <td><code>number</code></td>
+                        <td>Числа (целые и вещественные)</td>
+                        <td><code>42</code>, <code>3.14</code>, <code>-100</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>string</code></td>
+                        <td>Строки</td>
+                        <td><code>"Hello"</code>, <code>'World'</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>boolean</code></td>
+                        <td>Булевы значения</td>
+                        <td><code>yes</code>, <code>no</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>null</code></td>
+                        <td>Пустое значение</td>
+                        <td><code>nil</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>array</code></td>
+                        <td>Массивы</td>
+                        <td><code>[1, 2, 3]</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>dict</code></td>
+                        <td>Словари</td>
+                        <td><code>{"key": "value"}</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>function</code></td>
+                        <td>Функции</td>
+                        <td><code>func(x): ret x * 2</code></td>
+                    </tr>
+                </table>
+                
+                <h3>Определение типа</h3>
+                <pre><code><span class="keyword">echo</span>(typeof(<span class="number">42</span>))     <span class="comment"># number</span>
+<span class="keyword">echo</span>(typeof(<span class="string">"text"</span>))  <span class="comment"># string</span>
+<span class="keyword">echo</span>(typeof(<span class="keyword">yes</span>))    <span class="comment"># boolean</span>
+<span class="keyword">echo</span>(typeof(<span class="keyword">nil</span>))    <span class="comment"># null</span></code></pre>
+            </section>
+            
+            <!-- Переменные -->
+            <section id="variables">
+                <h2>📦 Переменные</h2>
+                
+                <h3>Объявление</h3>
+                <pre><code><span class="keyword">var</span> x = <span class="number">10</span>
+<span class="keyword">var</span> name = <span class="string">"Alice"</span>
+<span class="keyword">var</span> active = <span class="keyword">yes</span></code></pre>
+                
+                <h3>Деструктуризация</h3>
+                <pre><code><span class="comment"># Массивы</span>
+<span class="keyword">var</span> [a, b, c] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]
+<span class="keyword">echo</span>(a)  <span class="comment"># 1</span>
+
+<span class="comment"># Словари</span>
+<span class="keyword">var</span> person = {<span class="string">"name"</span>: <span class="string">"Alice"</span>, <span class="string">"age"</span>: <span class="number">25</span>}
+<span class="keyword">var</span> {name, age} = person
+<span class="keyword">echo</span>(name)  <span class="comment"># Alice</span></code></pre>
+                
+                <h3>Операторы присваивания</h3>
+                <pre><code>x = <span class="number">10</span>      <span class="comment"># Присваивание</span>
+x += <span class="number">5</span>      <span class="comment"># x = x + 5</span>
+x -= <span class="number">3</span>      <span class="comment"># x = x - 3</span>
+x *= <span class="number">2</span>      <span class="comment"># x = x * 2</span>
+x /= <span class="number">4</span>      <span class="comment"># x = x / 4</span>
+x++         <span class="comment"># Инкремент</span>
+x--         <span class="comment"># Декремент</span></code></pre>
+            </section>
+            
+            <!-- Операторы -->
+            <section id="operators">
+                <h2>🔧 Операторы</h2>
+                
+                <h3>Арифметические</h3>
+                <table>
+                    <tr><th>Оператор</th><th>Описание</th><th>Пример</th></tr>
+                    <tr><td><code>+</code></td><td>Сложение</td><td><code>5 + 3 = 8</code></td></tr>
+                    <tr><td><code>-</code></td><td>Вычитание</td><td><code>5 - 3 = 2</code></td></tr>
+                    <tr><td><code>*</code></td><td>Умножение</td><td><code>5 * 3 = 15</code></td></tr>
+                    <tr><td><code>/</code></td><td>Деление</td><td><code>6 / 2 = 3</code></td></tr>
+                    <tr><td><code>%</code></td><td>Остаток</td><td><code>7 % 3 = 1</code></td></tr>
+                    <tr><td><code>**</code></td><td>Степень</td><td><code>2 ** 3 = 8</code></td></tr>
+                </table>
+                
+                <h3>Сравнения</h3>
+                <table>
+                    <tr><th>Оператор</th><th>Описание</th></tr>
+                    <tr><td><code>==</code></td><td>Равно</td></tr>
+                    <tr><td><code>!=</code></td><td>Не равно</td></tr>
+                    <tr><td><code>&lt;</code></td><td>Меньше</td></tr>
+                    <tr><td><code>&gt;</code></td><td>Больше</td></tr>
+                    <tr><td><code>&lt;=</code></td><td>Меньше или равно</td></tr>
+                    <tr><td><code>&gt;=</code></td><td>Больше или равно</td></tr>
+                </table>
+                
+                <h3>Логические</h3>
+                <pre><code><span class="keyword">yes</span> <span class="keyword">and</span> <span class="keyword">no</span>    <span class="comment"># no</span>
+<span class="keyword">yes</span> <span class="keyword">or</span> <span class="keyword">no</span>     <span class="comment"># yes</span>
+<span class="keyword">not</span> <span class="keyword">yes</span>        <span class="comment"># no</span></code></pre>
+                
+                <h3>Другие</h3>
+                <ul>
+                    <li><code>&lt;-&gt;</code> — обмен значениями: <code>a &lt;-&gt; b</code></li>
+                    <li><code>??</code> — коалесценция: <code>x ?? 0</code> (если x nil, то 0)</li>
+                    <li><code>=&gt;</code> — стрелочная функция</li>
+                </ul>
+            </section>
+            
+            <!-- Управление потоком -->
+            <section id="control">
+                <h2>🔀 Управление потоком</h2>
+                
+                <h3>If-Else</h3>
+                <pre><code><span class="keyword">if</span> age >= <span class="number">18</span>:
+    <span class="keyword">echo</span>(<span class="string">"Adult"</span>)
+<span class="keyword">else</span>:
+    <span class="keyword">echo</span>(<span class="string">"Minor"</span>)</code></pre>
+                
+                <h3>Вложенные условия</h3>
+                <pre><code><span class="keyword">if</span> score >= <span class="number">90</span>:
+    <span class="keyword">echo</span>(<span class="string">"A"</span>)
+<span class="keyword">else</span>:
+    <span class="keyword">if</span> score >= <span class="number">70</span>:
+        <span class="keyword">echo</span>(<span class="string">"B"</span>)
+    <span class="keyword">else</span>:
+        <span class="keyword">echo</span>(<span class="string">"C"</span>)</code></pre>
+                
+                <h3>Switch/Match</h3>
+                <pre><code><span class="keyword">switch</span> day:
+    <span class="keyword">case</span> <span class="number">1</span>:
+        <span class="keyword">echo</span>(<span class="string">"Monday"</span>)
+    <span class="keyword">case</span> <span class="number">2</span>:
+        <span class="keyword">echo</span>(<span class="string">"Tuesday"</span>)
+    <span class="keyword">default</span>:
+        <span class="keyword">echo</span>(<span class="string">"Other"</span>)</code></pre>
+                
+                <h3>For цикл</h3>
+                <pre><code><span class="comment"># Диапазон</span>
+<span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">5</span>):
+    <span class="keyword">echo</span>(i)  <span class="comment"># 0, 1, 2, 3, 4</span>
+
+<span class="comment"># Массив</span>
+<span class="keyword">for</span> item <span class="keyword">in</span> [<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"c"</span>]:
+    <span class="keyword">echo</span>(item)</code></pre>
+                
+                <h3>While цикл</h3>
+                <pre><code><span class="keyword">var</span> i = <span class="number">0</span>
+<span class="keyword">while</span> i < <span class="number">5</span>:
+    <span class="keyword">echo</span>(i)
+    i = i + <span class="number">1</span></code></pre>
+                
+                <h3>Loop (бесконечный цикл)</h3>
+                <pre><code><span class="keyword">loop</span>:
+    <span class="keyword">if</span> done:
+        <span class="keyword">break</span>
+    <span class="keyword">echo</span>(<span class="string">"Working..."</span>)</code></pre>
+                
+                <h3>Break и Continue</h3>
+                <pre><code><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>):
+    <span class="keyword">if</span> i == <span class="number">5</span>:
+        <span class="keyword">break</span>  <span class="comment"># Выход из цикла</span>
+    <span class="keyword">if</span> i % <span class="number">2</span> == <span class="number">0</span>:
+        <span class="keyword">continue</span>  <span class="comment"># Пропуск итерации</span>
+    <span class="keyword">echo</span>(i)</code></pre>
+            </section>
+            
+            <!-- Функции -->
+            <section id="functions">
+                <h2>⚙️ Функции</h2>
+                
+                <h3>Объявление</h3>
+                <pre><code><span class="keyword">func</span> greet(name):
+    <span class="keyword">ret</span> <span class="string">"Hello, "</span> + name + <span class="string">"!"</span></code></pre>
+                
+                <h3>Вызов</h3>
+                <pre><code><span class="keyword">echo</span>(greet(<span class="string">"Alice"</span>))  <span class="comment"># Hello, Alice!</span></code></pre>
+                
+                <h3>Параметры по умолчанию</h3>
+                <div class="warning">
+                    ⚠️ Параметры по умолчанию пока не поддерживаются. Все параметры обязательны.
+                </div>
+                
+                <h3>Стрелочные функции</h3>
+                <pre><code><span class="keyword">var</span> double = (x) => x * <span class="number">2</span>
+<span class="keyword">echo</span>(double(<span class="number">5</span>))  <span class="comment"># 10</span>
+
+<span class="keyword">var</span> add = (a, b) => a + b
+<span class="keyword">echo</span>(add(<span class="number">3</span>, <span class="number">4</span>))  <span class="comment"># 7</span></code></pre>
+                
+                <h3>Рекурсия</h3>
+                <pre><code><span class="keyword">func</span> factorial(n):
+    <span class="keyword">if</span> n <= <span class="number">1</span>:
+        <span class="keyword">ret</span> <span class="number">1</span>
+    <span class="keyword">ret</span> n * factorial(n - <span class="number">1</span>)
+
+<span class="keyword">echo</span>(factorial(<span class="number">5</span>))  <span class="comment"># 120</span></code></pre>
+            </section>
+            
+            <!-- Массивы -->
+            <section id="arrays">
+                <h2>📚 Массивы</h2>
+                
+                <h3>Создание</h3>
+                <pre><code><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]
+<span class="keyword">var</span> empty = []
+<span class="keyword">var</span> mixed = [<span class="number">1</span>, <span class="string">"two"</span>, <span class="keyword">yes</span>]</code></pre>
+                
+                <h3>Доступ к элементам</h3>
+                <pre><code><span class="keyword">var</span> arr = [<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"c"</span>]
+<span class="keyword">echo</span>(arr[<span class="number">0</span>])  <span class="comment"># a</span>
+<span class="keyword">echo</span>(arr[<span class="number">1</span>])  <span class="comment"># b</span>
+<span class="keyword">echo</span>(arr[-<span class="number">1</span>]) <span class="comment"># c (последний)</span></code></pre>
+                
+                <h3>Операции</h3>
+                <pre><code>arr_append(arr, <span class="string">"d"</span>)    <span class="comment"># Добавить элемент</span>
+<span class="keyword">var</span> last = arr_pop(arr)  <span class="comment"># Удалить последний</span>
+<span class="keyword">var</span> len = len(arr)       <span class="comment"># Длина массива</span></code></pre>
+                
+                <h3>Методы массивов</h3>
+                <table>
+                    <tr><th>Функция</th><th>Описание</th></tr>
+                    <tr><td><code>arr_append(arr, val)</code></td><td>Добавить элемент в конец</td></tr>
+                    <tr><td><code>arr_pop(arr)</code></td><td>Удалить и вернуть последний элемент</td></tr>
+                    <tr><td><code>len(arr)</code></td><td>Вернуть длину массива</td></tr>
+                </table>
+            </section>
+            
+            <!-- Словари -->
+            <section id="dicts">
+                <h2>📖 Словари</h2>
+                
+                <h3>Создание</h3>
+                <pre><code><span class="keyword">var</span> person = {
+    <span class="string">"name"</span>: <span class="string">"Alice"</span>,
+    <span class="string">"age"</span>: <span class="number">25</span>,
+    <span class="string">"city"</span>: <span class="string">"Moscow"</span>
+}</code></pre>
+                
+                <h3>Доступ к значениям</h3>
+                <pre><code><span class="keyword">echo</span>(person[<span class="string">"name"</span>])  <span class="comment"># Alice</span>
+person[<span class="string">"age"</span>] = <span class="number">26</span>     <span class="comment"># Изменить значение</span></code></pre>
+                
+                <h3>Операции</h3>
+                <pre><code><span class="keyword">var</span> keys = keys(person)    <span class="comment"># ["name", "age", "city"]</span>
+<span class="keyword">var</span> vals = values(person)  <span class="comment"># ["Alice", 25, "Moscow"]</span>
+<span class="keyword">var</span> len = len(person)      <span class="comment"># 3</span></code></pre>
+            </section>
+            
+            <!-- Строки -->
+            <section id="strings">
+                <h2>📝 Строки</h2>
+                
+                <h3>Создание</h3>
+                <pre><code><span class="keyword">var</span> s1 = <span class="string">"Hello"</span>
+<span class="keyword">var</span> s2 = <span class="string">'World'</span>
+<span class="keyword">var</span> s3 = <span class="string">"""multiline
+string"""</span></code></pre>
+                
+                <h3>Конкатенация</h3>
+                <pre><code><span class="keyword">var</span> name = <span class="string">"Alice"</span>
+<span class="keyword">var</span> msg = <span class="string">"Hello, "</span> + name + <span class="string">"!"</span></code></pre>
+                
+                <h3>F-строки (интерполяция)</h3>
+                <pre><code><span class="keyword">var</span> name = <span class="string">"Alice"</span>
+<span class="keyword">var</span> age = <span class="number">25</span>
+<span class="keyword">echo</span>(f<span class="string">"My name is {name} and I'm {age}"</span>)</code></pre>
+                
+                <h3>Строковые функции</h3>
+                <table>
+                    <tr><th>Функция</th><th>Описание</th></tr>
+                    <tr><td><code>str_upper(s)</code></td><td>Верхний регистр</td></tr>
+                    <tr><td><code>str_lower(s)</code></td><td>Нижний регистр</td></tr>
+                    <tr><td><code>str_len(s)</code></td><td>Длина строки</td></tr>
+                    <tr><td><code>str_split(s, delim)</code></td><td>Разделить по разделителю</td></tr>
+                    <tr><td><code>str_join(delim, arr)</code></td><td>Объединить массив</td></tr>
+                    <tr><td><code>str_replace(s, from, to)</code></td><td>Заменить подстроку</td></tr>
+                    <tr><td><code>str_strip(s)</code></td><td>Удалить пробелы</td></tr>
+                    <tr><td><code>str_contains(s, sub)</code></td><td>Проверить вхождение</td></tr>
+                    <tr><td><code>str_startswith(s, prefix)</code></td><td>Начинается с</td></tr>
+                    <tr><td><code>str_endswith(s, suffix)</code></td><td>Заканчивается на</td></tr>
+                    <tr><td><code>str_find(s, sub)</code></td><td>Найти позицию</td></tr>
+                    <tr><td><code>str_substr(s, start, len)</code></td><td>Подстрока</td></tr>
+                </table>
+            </section>
+            
+            <!-- Обработка ошибок -->
+            <section id="errors">
+                <h2>⚠️ Обработка ошибок</h2>
+                
+                <h3>Try-Catch-Finally</h3>
+                <pre><code><span class="keyword">try</span>:
+    <span class="keyword">var</span> result = <span class="number">10</span> / <span class="number">0</span>
+<span class="keyword">catch</span> (e):
+    <span class="keyword">echo</span>(<span class="string">"Error: "</span> + str(e))
+<span class="keyword">finally</span>:
+    <span class="keyword">echo</span>(<span class="string">"Done"</span>)</code></pre>
+                
+                <h3>Выброс исключений</h3>
+                <pre><code><span class="keyword">raise</span> <span class="string">"Custom error"</span></code></pre>
+                
+                <div class="tip">
+                    💡 Блок <code>finally</code> выполняется всегда, даже если произошло исключение.
+                </div>
+            </section>
+            
+            <!-- Модули -->
+            <section id="modules">
+                <h2>📦 Модули</h2>
+                
+                <h3>Импорт</h3>
+                <pre><code><span class="keyword">use</span> crypto
+<span class="keyword">use</span> file
+<span class="keyword">use</span> math
+<span class="keyword">use</span> os
+
+<span class="comment"># Или несколько сразу</span>
+<span class="keyword">use</span> crypto, file, math</code></pre>
+                
+                <h3>Доступ к функциям модуля</h3>
+                <pre><code><span class="keyword">use</span> crypto
+
+<span class="keyword">var</span> hash = crypto_hash(<span class="string">"text"</span>)
+<span class="keyword">var</span> enc = crypto_encrypt(<span class="string">"data"</span>, <span class="string">"key"</span>)</code></pre>
+            </section>
+            
+            <!-- Стандартная библиотека -->
+            <section id="stdlib">
+                <h2>📚 Стандартная библиотека</h2>
+                
+                <h3>Математика</h3>
+                <table>
+                    <tr><th>Функция</th><th>Описание</th></tr>
+                    <tr><td><code>abs(x)</code></td><td>Модуль числа</td></tr>
+                    <tr><td><code>sqrt(x)</code></td><td>Квадратный корень</td></tr>
+                    <tr><td><code>pow(x, y)</code></td><td>Степень</td></tr>
+                    <tr><td><code>min(a, b)</code></td><td>Минимум</td></tr>
+                    <tr><td><code>max(a, b)</code></td><td>Максимум</td></tr>
+                    <tr><td><code>floor(x)</code></td><td>Округление вниз</td></tr>
+                    <tr><td><code>ceil(x)</code></td><td>Округление вверх</td></tr>
+                    <tr><td><code>round(x)</code></td><td>Округление</td></tr>
+                    <tr><td><code>sin(x)</code></td><td>Синус</td></tr>
+                    <tr><td><code>cos(x)</code></td><td>Косинус</td></tr>
+                    <tr><td><code>tan(x)</code></td><td>Тангенс</td></tr>
+                    <tr><td><code>log(x)</code></td><td>Натуральный логарифм</td></tr>
+                    <tr><td><code>math_pi()</code></td><td>Число π</td></tr>
+                    <tr><td><code>math_e()</code></td><td>Число e</td></tr>
+                </table>
+                
+                <h3>Файлы</h3>
+                <table>
+                    <tr><th>Функция</th><th>Описание</th></tr>
+                    <tr><td><code>file_read(path)</code></td><td>Читать файл</td></tr>
+                    <tr><td><code>file_write(path, data)</code></td><td>Записать в файл</td></tr>
+                    <tr><td><code>file_append(path, data)</code></td><td>Добавить в файл</td></tr>
+                    <tr><td><code>file_exists(path)</code></td><td>Проверить существование</td></tr>
+                    <tr><td><code>file_delete(path)</code></td><td>Удалить файл</td></tr>
+                    <tr><td><code>file_lines(path)</code></td><td>Читать строки файла</td></tr>
+                </table>
+                
+                <h3>ОС</h3>
+                <table>
+                    <tr><th>Функция</th><th>Описание</th></tr>
+                    <tr><td><code>os_getenv(name)</code></td><td>Переменная окружения</td></tr>
+                    <tr><td><code>os_setenv(name, val)</code></td><td>Установить переменную</td></tr>
+                    <tr><td><code>os_system(cmd)</code></td><td>Выполнить команду</td></tr>
+                    <tr><td><code>os_exit(code)</code></td><td>Выход из программы</td></tr>
+                    <tr><td><code>os_cwd()</code></td><td>Текущая директория</td></tr>
+                    <tr><td><code>os_mkdir(path)</code></td><td>Создать директорию</td></tr>
+                    <tr><td><code>os_rmdir(path)</code></td><td>Удалить директорию</td></tr>
+                    <tr><td><code>os_isfile(path)</code></td><td>Это файл?</td></tr>
+                    <tr><td><code>os_isdir(path)</code></td><td>Это директория?</td></tr>
+                </table>
+                
+                <h3>Криптография</h3>
+                <table>
+                    <tr><th>Функция</th><th>Описание</th></tr>
+                    <tr><td><code>crypto_hash(data)</code></td><td>Хеширование</td></tr>
+                    <tr><td><code>crypto_encrypt(data, key)</code></td><td>Шифрование</td></tr>
+                    <tr><td><code>crypto_decrypt(data, key)</code></td><td>Расшифровка</td></tr>
+                </table>
+
+                <h3>📦 JSON</h3>
+                <div class="tip">
+                    💡 <strong>JSON</strong> (JavaScript Object Notation) — текстовый формат обмена данными.
+                </div>
+                <table>
+                    <tr><th>Функция</th><th>Описание</th></tr>
+                    <tr><td><code>json_parse(str)</code></td><td>Парсинг JSON строки в объект</td></tr>
+                    <tr><td><code>json_stringify(obj)</code></td><td>Сериализация объекта в JSON</td></tr>
+                </table>
+
+                <h4>Примеры использования JSON</h4>
+                <pre><code><span class="comment"># Парсинг JSON</span>
+<span class="keyword">var</span> json_str = <span class="string">'{"name": "Alice", "age": 25}'</span>
+<span class="keyword">var</span> obj = json_parse(json_str)
+<span class="keyword">echo</span>(obj[<span class="string">"name"</span>])  <span class="comment"># Alice</span>
+<span class="keyword">echo</span>(obj[<span class="string">"age"</span>])    <span class="comment"># 25</span>
+
+<span class="comment"># Сериализация в JSON</span>
+<span class="keyword">var</span> person = {<span class="string">"name"</span>: <span class="string">"Bob"</span>, <span class="string">"city"</span>: <span class="string">"Moscow"</span>}
+<span class="keyword">var</span> json = json_stringify(person)
+<span class="keyword">echo</span>(json)  <span class="comment"># {"name":"Bob","city":"Moscow"}</span></code></pre>
+
+                <h4>Поддерживаемые типы JSON</h4>
+                <table>
+                    <tr><th>JSON</th><th>Mirror</th></tr>
+                    <tr><td><code>{"key": "value"}</code></td><td>dict</td></tr>
+                    <tr><td><code>[1, 2, 3]</code></td><td>array</td></tr>
+                    <tr><td><code>"string"</code></td><td>string</td></tr>
+                    <tr><td><code>123</code></td><td>number</td></tr>
+                    <tr><td><code>true/false</code></td><td>yes/no</td></tr>
+                    <tr><td><code>null</code></td><td>nil</td></tr>
+                </table>
+            </section>
+            
+            <!-- Примеры -->
+            <section id="examples">
+                <h2>💡 Примеры</h2>
+                
+                <h3>Факториал</h3>
+                <pre><code><span class="keyword">func</span> factorial(n):
+    <span class="keyword">if</span> n <= <span class="number">1</span>:
+        <span class="keyword">ret</span> <span class="number">1</span>
+    <span class="keyword">ret</span> n * factorial(n - <span class="number">1</span>)
+
+<span class="keyword">echo</span>(factorial(<span class="number">5</span>))  <span class="comment"># 120</span></code></pre>
+                
+                <h3>Фибоначчи</h3>
+                <pre><code><span class="keyword">func</span> fib(n):
+    <span class="keyword">if</span> n <= <span class="number">1</span>:
+        <span class="keyword">ret</span> n
+    <span class="keyword">ret</span> fib(n - <span class="number">1</span>) + fib(n - <span class="number">2</span>)
+
+<span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>):
+    <span class="keyword">echo</span>(fib(i))</code></pre>
+                
+                <h3>Чтение файла</h3>
+                <pre><code><span class="keyword">use</span> file
+
+<span class="keyword">var</span> content = file_read(<span class="string">"data.txt"</span>)
+<span class="keyword">var</span> lines = str_split(content, <span class="string">"\n"</span>)
+
+<span class="keyword">for</span> line <span class="keyword">in</span> lines:
+    <span class="keyword">echo</span>(line)</code></pre>
+                
+                <h3>Простой калькулятор</h3>
+                <pre><code><span class="keyword">func</span> calc(a, op, b):
+    <span class="keyword">switch</span> op:
+        <span class="keyword">case</span> <span class="string">"+"</span>:
+            <span class="keyword">ret</span> a + b
+        <span class="keyword">case</span> <span class="string">"-"</span>:
+            <span class="keyword">ret</span> a - b
+        <span class="keyword">case</span> <span class="string">"*"</span>:
+            <span class="keyword">ret</span> a * b
+        <span class="keyword">case</span> <span class="string">"/"</span>:
+            <span class="keyword">ret</span> a / b
+        <span class="keyword">default</span>:
+            <span class="keyword">ret</span> <span class="keyword">nil</span>
+
+<span class="keyword">echo</span>(calc(<span class="number">10</span>, <span class="string">"+"</span>, <span class="number">5</span>))  <span class="comment"># 15</span></code></pre>
+            </section>
+        </main>
+        
+        <footer>
+            <p>🪞 Mirror Language v3.0.0</p>
+            <p><a href="index.html">← Вернуться на главную</a></p>
+        </footer>
+    </div>
+</body>
+</html>

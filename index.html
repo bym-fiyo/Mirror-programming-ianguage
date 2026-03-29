@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mirror Language — современный язык программирования с простым синтаксисом и мощными возможностями">
+    <meta name="keywords" content="Mirror, язык программирования, programming language, интерпретатор, coding">
+    <title>Mirror Language — Современный язык программирования</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/svg+xml" href="img/mirror-icon.svg">
+</head>
+<body>
+    <!-- Background Grid -->
+    <div class="bg-grid"></div>
+    <div class="bg-particles"></div>
+    
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <div class="logo-container">
+                <img src="img/mirror-icon.svg" alt="Mirror Logo" class="hero-logo">
+            </div>
+            <h1 class="hero-title">Mirror Language</h1>
+            <p class="hero-subtitle">Отражение вашего разума</p>
+            
+            <div class="terminal-window">
+                <div class="terminal-header">
+                    <span class="terminal-title">terminal@mirror:~</span>
+                    <div class="terminal-buttons">
+                        <span class="btn-terminal"></span>
+                        <span class="btn-terminal"></span>
+                        <span class="btn-terminal"></span>
+                    </div>
+                </div>
+                <div class="terminal-body">
+                    <p><span class="prompt">$</span> <span class="command">mirror --version</span></p>
+                    <p class="output">Mirror Language v3.0.0</p>
+                    <p><span class="prompt">$</span> <span class="command">echo "Hello, World!"</span></p>
+                    <p class="output">Hello, World!</p>
+                    <p><span class="prompt">$</span> <span class="command">mirror --philosophy</span></p>
+                    <p class="output">"Код должен быть читаемым, как текст"</p>
+                    <p><span class="prompt">$</span> <span class="cursor">_</span></p>
+                </div>
+            </div>
+            
+            <div class="hero-buttons">
+                <a href="#download" class="btn btn-primary btn-large">
+                    <span class="btn-icon">⬇</span> Скачать установщик с GUI
+                </a>
+                <a href="#features" class="btn btn-secondary btn-large">
+                    <span class="btn-icon">→</span> Узнать больше
+                </a>
+            </div>
+            
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">95+</span>
+                    <span class="stat-label">Функций в библиотеке</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">3</span>
+                    <span class="stat-label">Платформы</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">∞</span>
+                    <span class="stat-label">Возможностей</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-wave">
+            <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+                <path d="M0,64 C480,160 960,0 1440,64 L1440,120 L0,120 Z" fill="#1a1642"/>
+            </svg>
+        </div>
+    </header>
+    
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <span class="logo-bracket">[</span>Mirror<span class="logo-bracket">]</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#philosophy"><span class="nav-hash">#</span>философия</a></li>
+                <li><a href="#values"><span class="nav-hash">#</span>ценности</a></li>
+                <li><a href="#features"><span class="nav-hash">#</span>возможности</a></li>
+                <li><a href="#download"><span class="nav-hash">#</span>скачать</a></li>
+                <li><a href="#syntax"><span class="nav-hash">#</span>синтаксис</a></li>
+                <li><a href="#datatypes"><span class="nav-hash">#</span>типы</a></li>
+                <li><a href="#operators"><span class="nav-hash">#</span>операторы</a></li>
+                <li><a href="#controlflow"><span class="nav-hash">#</span>поток</a></li>
+                <li><a href="#functions"><span class="nav-hash">#</span>функции</a></li>
+                <li><a href="#stdlib"><span class="nav-hash">#</span>библиотека</a></li>
+                <li><a href="#community"><span class="nav-hash">#</span>сообщество</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <main>
+        <!-- Philosophy Section -->
+        <section id="philosophy" class="section philosophy">
+            <div class="container">
+                <h2 class="section-title"><span class="title-bracket">[</span> Философия <span class="title-bracket">]</span></h2>
+                <p class="section-subtitle">// Почему Mirror существует</p>
+                
+                <div class="philosophy-content">
+                    <div class="philosophy-text">
+                        <blockquote class="main-quote">
+                            "Я создал Mirror не потому, что мир нуждался в ещё одном языке программирования.
+                            Я создал его, потому что мир нуждался в языке, который <span class="highlight">не заставляет страдать</span>."
+                        </blockquote>
+                        
+                        <blockquote class="funny-inline-quote">
+                            "🪞 Зеркало отражает ваш интеллект. Так что если код будет тупым, не обижайтесь!"
+                            <cite>— Древняя мудрость Mirror</cite>
+                        </blockquote>
+                        
+                        <p class="lead-text">
+                            Mirror Language родился из фрустрации. Фрустрации от языков, где нужно написать 10 строк кода,
+                            чтобы сделать простую вещь. От языков, где синтаксис выглядит как случайный набор скобок.
+                            От языков, где ты тратишь больше времени на борьбу с компилятором, чем на решение задачи.
+                        </p>
+                        
+                        <h3>// Наши принципы</h3>
+                        <div class="principles-grid">
+                            <div class="principle-card">
+                                <div class="principle-icon">📖</div>
+                                <h4>Читаемость прежде всего</h4>
+                                <p>Код на Mirror должен читаться как обычный текст. Если ваш бабушка не может понять, что делает код — мы проиграли.</p>
+                            </div>
+                            
+                            <div class="principle-card">
+                                <div class="principle-icon">⚡</div>
+                                <h4>Минимум кода, максимум результата</h4>
+                                <p>Зачем писать 5 строк, если можно написать 1? Я верю в лаконичность без потери понятности.</p>
+                            </div>
+                            
+                            <div class="principle-card">
+                                <div class="principle-icon">🤝</div>
+                                <h4>Дружелюбность к новичкам</h4>
+                                <p>Первый язык программирования не должен быть испытанием на прочность. Mirror создан для того, чтобы учиться было приятно.</p>
+                            </div>
+                            
+                            <div class="principle-card">
+                                <div class="principle-icon">🔓</div>
+                                <h4>Открытость</h4>
+                                <p>Mirror — open source проект. Я верю, что лучшие языки создаются сообществом, а не в закрытых лабораториях.</p>
+                            </div>
+                        </div>
+                        
+                        <h3>// Манифест Mirror</h3>
+                        <div class="manifesto">
+                            <pre><code>// Я верю, что...
+
+1. Код должен быть читаемым, как текст
+2. Ошибки должны помогать, а не пугать
+3. Простота не означает слабость
+4. Хороший язык учит хорошему коду
+5. Программирование доступно каждому
+
+// Я не верю в...
+
+1. Магические скобки
+2. Непонятные ошибки компилятора
+3. Сложность ради сложности
+4. Элитарность в программировании
+5. Языки, которые требуют PhD для понимания</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Values Section -->
+        <section id="values" class="section values">
+            <div class="container">
+                <h2 class="section-title"><span class="title-bracket">[</span> Ценности <span class="title-bracket">]</span></h2>
+                <p class="section-subtitle">// Что для меня важно</p>
+
+                <div class="values-timeline">
+                    <div class="value-item">
+                        <div class="value-number">01</div>
+                        <div class="value-content">
+                            <h3>🔍 Прозрачность</h3>
+                            <p>Никакой магии. Если что-то происходит, вы должны понимать почему. Mirror не скрывает от вас то, что происходит под капотом. Каждая функция, каждая операция — открыта и понятна.</p>
+                            <code class="value-example">var x = 10  // Просто и понятно</code>
+                            <p class="value-desc"><strong>Почему это важно:</strong> Когда вы видите, как работает код, вы можете его улучшить, исправить и доверять ему.</p>
+                        </div>
+                    </div>
+
+                    <div class="value-item">
+                        <div class="value-number">02</div>
+                        <div class="value-content">
+                            <h3>📐 Последовательность</h3>
+                            <p>Если вы выучили одну часть языка, остальные части будут логичным продолжением. Никаких исключений из правил. Все функции работают одинаково, все типы данных ведут себя предсказуемо.</p>
+                            <code class="value-example">str_upper(s)  // Все функции работают одинаково</code>
+                            <p class="value-desc"><strong>Почему это важно:</strong> Последовательность снижает когнитивную нагрузку. Вы тратите меньше времени на запоминание и больше на решение задач.</p>
+                        </div>
+                    </div>
+
+                    <div class="value-item">
+                        <div class="value-number">03</div>
+                        <div class="value-content">
+                            <h3>⚡ Практичность</h3>
+                            <p>Мы добавляем только то, что действительно нужно. Никаких академических фич "на всякий случай". 95+ функций в стандартной библиотеке покрывают 99% задач разработчика: работа со строками, файлами, криптографией, JSON и ОС.</p>
+                            <code class="value-example">use file, crypto, json, math  // Только то, что нужно</code>
+                            <p class="value-desc"><strong>Почему это важно:</strong> Меньше значит больше. Простой язык с мощными возможностями — это баланс, к которому я стремлюсь.</p>
+                        </div>
+                    </div>
+
+                        <div class="value-item">
+                        <div class="value-number">04</div>
+                        <div class="value-content">
+                            <h3>🤝 Сообщество</h3>
+                            <p>Mirror создан разработчиками для разработчиков. Каждый вклад важен, каждая идея имеет значение. Я верю, что лучшие языки создаются сообществом, а не в закрытых лабораториях.</p>
+                            <code class="value-example">// Присоединяйтесь!</code>
+                            <p class="value-desc"><strong>Почему это важно:</strong> Один в поле не воин. Вместе мы можем создать язык, который поможет миллионам разработчиков.</p>
+                        </div>
+                    </div>
+
+                    <div class="value-item">
+                        <div class="value-number">05</div>
+                        <div class="value-content">
+                            <h3>🎓 Доступность</h3>
+                            <p>Программирование должно быть доступно каждому, независимо от возраста, образования или опыта. Mirror создан так, чтобы первый язык программирования не был испытанием на прочность.</p>
+                            <code class="value-example">echo("Hello, World!")  // Первая строка кода</code>
+                            <p class="value-desc"><strong>Почему это важно:</strong> Когда язык понятен новичкам, он становится мощным инструментом обучения. Хороший код начинается с хорошего языка.</p>
+                        </div>
+                    </div>
+
+                    <div class="value-item">
+                        <div class="value-number">06</div>
+                        <div class="value-content">
+                            <h3>🔓 Открытость</h3>
+                            <p>Исходный код интерпретатора открыт и доступен. Вы можете изучить его, улучшить, предложить изменения. Я верю в силу open source и коллективного разума.</p>
+                            <code class="value-example">gcc -o mirror mirror.c  // Компиляция из исходников</code>
+                            <p class="value-desc"><strong>Почему это важно:</strong> Открытый код — это доверие. Вы знаете, что делает интерпретатор, и можете это проверить.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Features Section -->
+        <section id="features" class="section features">
+            <div class="container">
+                <h2 class="section-title"><span class="title-bracket">[</span> Возможности <span class="title-bracket">]</span></h2>
+                <p class="section-subtitle">// Создан для разработчиков, которые ценят простоту и мощность</p>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🚀</div>
+                        <h3>Быстрый старт</h3>
+                        <p>Начните писать код через 5 минут после установки. Никакой сложной настройки.</p>
+                        <div class="feature-code"><code>python3 install-gui.py</code></div>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">📦</div>
+                        <h3>Богатая библиотека</h3>
+                        <p>95+ встроенных функций для работы со строками, файлами, криптографией и не только.</p>
+                        <div class="feature-code"><code>use crypto, file, math</code></div>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">🌍</div>
+                        <h3>Кроссплатформенность</h3>
+                        <p>Работает на Linux, macOS и Windows. Один язык — все платформы.</p>
+                        <div class="feature-code"><code>linux | macos | windows</code></div>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">🎯</div>
+                        <h3>Чистый синтаксис</h3>
+                        <p>Никаких лишних скобок и сложностей. Код читается как обычный текст.</p>
+                        <div class="feature-code"><code>var x = 10</code></div>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">🔧</div>
+                        <h3>Модульность</h3>
+                        <p>Импортируйте модули, создавайте свои библиотеки, делитесь кодом.</p>
+                        <div class="feature-code"><code>use my_module</code></div>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">🛡️</div>
+                        <h3>Безопасность</h3>
+                        <p>Встроенная обработка ошибок, try/catch/finally для надёжного кода.</p>
+                        <div class="feature-code"><code>try { ... } catch(e)</code></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Download Section -->
+        <section id="download" class="section download">
+            <div class="container">
+                <h2 class="section-title"><span class="title-bracket">[</span> Установка <span class="title-bracket">]</span></h2>
+                <p class="section-subtitle">// Установка занимает менее 1 минуты</p>
+
+                <div class="download-box">
+                    <div class="download-icon">🪞</div>
+                    <h3>Установщик с GUI на Qt6</h3>
+                    <p>Современный графический интерфейс для установки Mirror Language</p>
+
+                    <a href="install.zip" class="btn btn-primary btn-download" download="install.zip">
+                        <span class="btn-icon">⬇</span> Скачать установщик
+                    </a>
+
+                    <div class="download-info">
+                        <div class="download-item">
+                            <span class="os-icon">🐧</span>
+                            <span>Linux</span>
+                        </div>
+                        <div class="download-item">
+                            <span class="os-icon">🍎</span>
+                            <span>macOS</span>
+                        </div>
+                        <div class="download-item">
+                            <span class="os-icon">🪟</span>
+                            <span>Windows</span>
+                        </div>
+                    </div>
+
+                    <p class="download-note">
+                        <span class="file-icon">📦</span> Файл: <code>install-gui.py</code> • Требуется: <code>pip install PyQt6</code>
+                    </p>
+                </div>
+
+                <div class="install-steps">
+                    <h4>// Как установить GUI:</h4>
+                    <ol>
+                        <li><span class="step-num">01</span> Установите Python 3.6+</li>
+                        <li><span class="step-num">02</span> Установите PyQt6: <code>pip install PyQt6</code></li>
+                        <li><span class="step-num">03</span> Скачайте <code>install-gui.py</code></li>
+                        <li><span class="step-num">04</span> Запустите: <code>python3 install-gui.py</code></li>
+                    </ol>
+                    
+                    <div class="pyqt-note">
+                        <p><strong>💡 Не получается установить PyQt6?</strong></p>
+                        <p>Попробуйте альтернативные способы:</p>
+                        <pre><code># Обновите pip
+pip install --upgrade pip
+
+# Или через системный пакетный менеджер:
+sudo apt install python3-pyqt6    # Linux
+brew install pyqt6                # macOS</code></pre>
+                    </div>
+                </div>
+                
+                <div class="install-manual">
+                    <h4>// Ручная установка (Linux/macOS)</h4>
+                    
+                    <div class="install-tab">
+                        <h5>🐧 Linux</h5>
+                        <pre><code># 1. Установите зависимости
+sudo apt-get install gcc libssl-dev  # Debian/Ubuntu
+sudo dnf install gcc openssl-devel   # Fedora
+sudo pacman -S gcc openssl           # Arch
+
+# 2. Скомпилируйте интерпретатор
+gcc -o mirror mirror.c -lm -lssl -lcrypto -O2
+
+# 3. Установите в систему
+sudo cp mirror /usr/local/bin/
+sudo chmod +x /usr/local/bin/mirror
+
+# 4. Проверьте установку
+mirror --version</code></pre>
+                    </div>
+                    
+                    <div class="install-tab">
+                        <h5>🍎 macOS</h5>
+                        <pre><code># 1. Установите Xcode Command Line Tools
+xcode-select --install
+
+# 2. Установите OpenSSL через Homebrew
+brew install openssl
+
+# 3. Скомпилируйте интерпретатор
+gcc -o mirror mirror.c -lm -lssl -lcrypto -O2
+
+# 4. Установите в систему
+sudo cp mirror /usr/local/bin/
+sudo chmod +x /usr/local/bin/mirror
+
+# 5. Проверьте установку
+mirror --version</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Syntax Section -->
+        <section id="syntax" class="section syntax">
+            <div class="container">
+                <h2 class="section-title"><span class="title-bracket">[</span> Синтаксис <span class="title-bracket">]</span></h2>
+                <p class="section-subtitle">// Код на Mirror читается как обычный текст</p>
+                
+                <div class="syntax-showcase">
+                    <div class="code-window">
+                        <div class="window-header">
+                            <span class="window-buttons">
+                                <span class="btn-red"></span>
+                                <span class="btn-yellow"></span>
+                                <span class="btn-green"></span>
+                            </span>
+                            <span class="window-title">program.mirror</span>
+                        </div>
+                        <pre><code class="language-mirror"><span class="comment"># Первая программа</span>
+<span class="keyword">echo</span>(<span class="string">"Hello, World!"</span>)
+
+<span class="comment"># Переменные</span>
+<span class="keyword">var</span> name = <span class="string">"Alice"</span>
+<span class="keyword">var</span> age = <span class="number">25</span>
+
+<span class="comment"># Функции</span>
+<span class="keyword">func</span> greet(person):
+    <span class="keyword">ret</span> <span class="string">"Hello, "</span> + person + <span class="string">"!"</span>
+
+<span class="keyword">echo</span>(greet(name))
+
+<span class="comment"># Условия</span>
+<span class="keyword">if</span> age >= <span class="number">18</span>:
+    <span class="keyword">echo</span>(<span class="string">"Adult"</span>)
+<span class="keyword">else</span>:
+    <span class="keyword">echo</span>(<span class="string">"Minor"</span>)
+
+<span class="comment"># Циклы</span>
+<span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">5</span>):
+    <span class="keyword">echo</span>(i)
+
+<span class="comment"># Обработка ошибок</span>
+<span class="keyword">try</span>:
+    <span class="keyword">var</span> result = <span class="number">10</span> / <span class="number">0</span>
+<span class="keyword">catch</span> (e):
+    <span class="keyword">echo</span>(<span class="string">"Error: "</span> + str(e))</code></pre>
+                    </div>
+                    
+                    <div class="syntax-features">
+                        <h3>// Ключевые слова</h3>
+                        <ul class="keyword-list">
+                            <li><code>var</code> <span class="kw-desc">переменные</span></li>
+                            <li><code>func</code> <span class="kw-desc">функции</span></li>
+                            <li><code>ret</code> <span class="kw-desc">возврат</span></li>
+                            <li><code>echo</code> <span class="kw-desc">вывод</span></li>
+                            <li><code>ask</code> <span class="kw-desc">ввод</span></li>
+                            <li><code>use</code> <span class="kw-desc">импорт</span></li>
+                            <li><code>switch</code> <span class="kw-desc">выбор</span></li>
+                            <li><code>try/catch</code> <span class="kw-desc">ошибки</span></li>
+                            <li><code>yes/no</code> <span class="kw-desc">булево</span></li>
+                            <li><code>nil</code> <span class="kw-desc">пусто</span></li>
+                        </ul>
+                        
+                        <div class="syntax-note">
+                            <p>// Синтаксис на основе отступов</p>
+                            <p>// 4 пробела для вложенности</p>
+                            <p>// Никаких фигурных скобок!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Data Types Section -->
+        <section id="datatypes" class="section datatypes">
+            <div class="container">
+                <h2 class="section-title"><span class="title-bracket">[</span> Типы данных <span class="title-bracket">]</span></h2>
+                <p class="section-subtitle">// Динамическая типизация, как ты любишь</p>
+                
+                <div class="datatypes-grid">
+                    <div class="datatype-card">
+                        <div class="datatype-header">
+                            <span class="datatype-icon">#</span>
+                            <h3>Numbers</h3>
+                        </div>
+                        <p>Целые и вещественные числа</p>
+                        <pre><code><span class="keyword">var</span> x = <span class="number">42</span>
+<span class="keyword">var</span> pi = <span class="number">3.14159</span>
+<span class="keyword">var</span> neg = -<span class="number">100</span></code></pre>
+                    </div>
+                    
+                    <div class="datatype-card">
+                        <div class="datatype-header">
+                            <span class="datatype-icon">"</span>
+                            <h3>Strings</h3>
+                        </div>
+                        <p>Строки в двойных кавычках</p>
+                        <pre><code><span class="keyword">var</span> name = <span class="string">"Alice"</span>
+<span class="keyword">var</span> msg = <span class="string">"Hello, "</span> + name
+<span class="keyword">var</span> multi = <span class="string">"""multiline</span>
+<span class="string">string"""</span></code></pre>
+                    </div>
+                    
+                    <div class="datatype-card">
+                        <div class="datatype-header">
+                            <span class="datatype-icon">?</span>
+                            <h3>Boolean</h3>
+                        </div>
+                        <p>Логические значения</p>
+                        <pre><code><span class="keyword">var</span> active = <span class="keyword">yes</span>
+<span class="keyword">var</span> done = <span class="keyword">no</span>
+<span class="keyword">var</span> empty = <span class="keyword">nil</span></code></pre>
+                    </div>
+                    
+                    <div class="datatype-card">
+                        <div class="datatype-header">
+                            <span class="datatype-icon">[ ]</span>
+                            <h3>Arrays</h3>
+                        </div>
+                        <p>Массивы значений. Как список покупок, но для кода.</p>
+                        <pre><code><span class="keyword">var</span> nums = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]
+<span class="keyword">var</span> mixed = [<span class="number">1</span>, <span class="string">"two"</span>, <span class="keyword">yes</span>]
+<span class="keyword">var</span> empty = []  <span class="comment"># Как и моя мотивация по понедельникам</span></code></pre>
+                    </div>
+                    
+                    <div class="datatype-card">
+                        <div class="datatype-header">
+                            <span class="datatype-icon">{ }</span>
+                            <h3>Dicts</h3>
+                        </div>
+                        <p>Словари (ключ-значение)</p>
+                        <pre><code><span class="keyword">var</span> person = {
+    <span class="string">"name"</span>: <span class="string">"Alice"</span>,
+    <span class="string">"age"</span>: <span class="number">25</span>
+}</code></pre>
+                    </div>
+                    
+                    <div class="datatype-card">
+                        <div class="datatype-header">
+                            <span class="datatype-icon">fn</span>
+                            <h3>Functions</h3>
+                        </div>
+                        <p>Функции как значения</p>
+                        <pre><code><span class="keyword">func</span> add(a, b) {
+    <span class="keyword">ret</span> a + b
+}
+<span class="keyword">var</span> f = add</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Operators Section -->
+        <section id="operators" class="section operators">
+            <div class="container">
+                <h2 class="section-title"><span class="title-bracket">[</span> Операторы <span class="title-bracket">]</span></h2>
+                <p class="section-subtitle">// Всё, что нужно для вычислений</p>
+                
+                <div class="operators-table">
+                    <h3>// Арифметические</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Оператор</th>
+                                <th>Описание</th>
+                                <th>Пример</th>
+                                <th>Результат</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>+</code></td>
+                                <td>Сложение</td>
+                                <td><code>5 + 3</code></td>
+                                <td><code>8</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>-</code></td>
+                                <td>Вычитание</td>
+                                <td><code>10 - 4</code></td>
+                                <td><code>6</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>*</code></td>
+                                <td>Умножение</td>
+                                <td><code>3 * 4</code></td>
+                                <td><code>12</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>/</code></td>
+                                <td>Деление</td>
+                                <td><code>20 / 5</code></td>
+                                <td><code>4</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>%</code></td>
+                                <td>Остаток</td>
+                                <td><code>17 % 5</code></td>
+                                <td><code>2</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>**</code></td>
+                                <td>Степень</td>
+                                <td><code>2 ** 3</code></td>
+                                <td><code>8</code></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <h3>// Сравнения</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Оператор</th>
+                                <th>Описание</th>
+                                <th>Пример</th>
+                                <th>Результат</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>==</code></td>
+                                <td>Равно</td>
+                                <td><code>5 == 5</code></td>
+                                <td><code>yes</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>!=</code></td>
+                                <td>Не равно</td>
+                                <td><code>5 != 3</code></td>
+                                <td><code>yes</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>&lt;</code></td>
+                                <td>Меньше</td>
+                                <td><code>3 &lt; 5</code></td>
+                                <td><code>yes</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>&gt;</code></td>
+                                <td>Больше</td>
+                                <td><code>5 &gt; 3</code></td>
+                                <td><code>yes</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>&lt;=</code></td>
+                                <td>Меньше или равно</td>
+                                <td><code>5 &lt;= 5</code></td>
+                                <td><code>yes</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>&gt;=</code></td>
+                                <td>Больше или равно</td>
+                                <td><code>5 &gt;= 3</code></td>
+                                <td><code>yes</code></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <h3>// Логические</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Оператор</th>
+                                <th>Описание</th>
+                                <th>Пример</th>
+                                <th>Результат</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>and</code></td>
+                                <td>И</td>
+                                <td><code>yes and yes</code></td>
+                                <td><code>yes</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>or</code></td>
+                                <td>ИЛИ</td>
+                                <td><code>yes or no</code></td>
+                                <td><code>yes</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>not</code></td>
+                                <td>НЕ</td>
+                                <td><code>not no</code></td>
+                                <td><code>yes</code></td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" class="joke-row">💡 <code>not</code> — это как говорить "не глупый" вместо "умный". Работает, но странно.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <h3>// Специальные</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Оператор</th>
+                                <th>Описание</th>
+                                <th>Пример</th>
+                                <th>Результат</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>??</code></td>
+                                <td>Null coalescing</td>
+                                <td><code>nil ?? "default"</code></td>
+                                <td><code>"default"</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>?</code></td>
+                                <td>Тернарный</td>
+                                <td><code>x > 0 ? "pos" : "neg"</code></td>
+                                <td><code>"pos"</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>++</code></td>
+                                <td>Инкремент</td>
+                                <td><code>x++</code></td>
+                                <td><code>x + 1</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>--</code></td>
+                                <td>Декремент</td>
+                                <td><code>x--</code></td>
+                                <td><code>x - 1</code></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Control Flow Section -->
+        <section id="controlflow" class="section controlflow">
+            <div class="container">
+                <h2 class="section-title"><span class="title-bracket">[</span> Управляющие конструкции <span class="title-bracket">]</span></h2>
+                <p class="section-subtitle">// Управляй потоком как бог</p>
+                
+                <div class="controlflow-grid">
+                    <div class="flow-card">
+                        <h3>// If / Else</h3>
+                        <pre><code><span class="keyword">var</span> age = <span class="number">20</span>
+
+<span class="keyword">if</span> age >= <span class="number">18</span> {
+    <span class="keyword">echo</span>(<span class="string">"Adult"</span>)
+} <span class="keyword">else</span> {
+    <span class="keyword">echo</span>(<span class="string">"Minor"</span>)
+}
+
+<span class="comment"># Тернарный оператор</span>
+<span class="keyword">var</span> status = age >= <span class="number">18</span> ? <span class="string">"adult"</span> : <span class="string">"minor"</span></code></pre>
+                    </div>
+                    
+                    <div class="flow-card">
+                        <h3>// Switch / Case</h3>
+                        <pre><code><span class="keyword">var</span> day = <span class="number">3</span>
+
+<span class="keyword">switch</span> day {
+    <span class="keyword">case</span> <span class="number">1</span>: <span class="keyword">echo</span>(<span class="string">"Mon"</span>)
+    <span class="keyword">case</span> <span class="number">2</span>: <span class="keyword">echo</span>(<span class="string">"Tue"</span>)
+    <span class="keyword">case</span> <span class="number">3</span>: <span class="keyword">echo</span>(<span class="string">"Wed"</span>)
+    <span class="keyword">default</span>: <span class="keyword">echo</span>(<span class="string">"Other"</span>)
+}</code></pre>
+                    </div>
+                    
+                    <div class="flow-card">
+                        <h3>// For Loop</h3>
+                        <pre><code><span class="comment"># Диапазон чисел</span>
+<span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">5</span>) {
+    <span class="keyword">echo</span>(i)  <span class="comment"># 0,1,2,3,4</span>
+}
+
+<span class="comment"># Массив</span>
+<span class="keyword">for</span> item <span class="keyword">in</span> [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>] {
+    <span class="keyword">echo</span>(item)
+}</code></pre>
+                    </div>
+                    
+                    <div class="flow-card">
+                        <h3>// While Loop</h3>
+                        <pre><code><span class="keyword">var</span> count = <span class="number">5</span>
+
+<span class="keyword">while</span> count > <span class="number">0</span> {
+    <span class="keyword">echo</span>(count)
+    count--
+}
+
+<span class="comment"># Бесконечный цикл</span>
+<span class="keyword">loop</span> {
+    <span class="keyword">if</span> done { <span class="keyword">stop</span> }
+}</code></pre>
+                    </div>
+                    
+                    <div class="flow-card">
+                        <h3>// Try / Catch</h3>
+                        <pre><code><span class="keyword">try</span> {
+    <span class="keyword">var</span> result = <span class="number">10</span> / <span class="number">0</span>
+} <span class="keyword">catch</span> (e) {
+    <span class="keyword">echo</span>(<span class="string">"Error: "</span> + str(e))
+} <span class="keyword">finally</span> {
+    <span class="keyword">echo</span>(<span class="string">"Cleanup"</span>)
+}
+
+<span class="comment"># finally выполняется всегда</span>
+<span class="comment"># Как дедлайн в пятницу вечером</span></code></pre>
+                    </div>
+                    
+                    <div class="flow-card">
+                        <h3>// Control</h3>
+                        <pre><code><span class="comment"># Прерывание</span>
+<span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>) {
+    <span class="keyword">if</span> i == <span class="number">5</span> { <span class="keyword">stop</span> }
+}
+
+<span class="comment"># Продолжение</span>
+<span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>) {
+    <span class="keyword">if</span> i % <span class="number">2</span> == <span class="number">0</span> { <span class="keyword">next</span> }
+    <span class="keyword">echo</span>(i)
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Functions Section -->
+        <section id="functions" class="section functions">
+            <div class="container">
+                <h2 class="section-title"><span class="title-bracket">[</span> Функции <span class="title-bracket">]</span></h2>
+                <p class="section-subtitle">// Переиспользуй код как профессионал</p>
+                
+                <div class="functions-content">
+                    <div class="function-example">
+                        <h3>// Объявление функции</h3>
+                        <pre><code><span class="keyword">func</span> add(a, b) {
+    <span class="keyword">ret</span> a + b
+}
+
+<span class="keyword">var</span> result = add(<span class="number">2</span>, <span class="number">3</span>)
+<span class="keyword">echo</span>(result)  <span class="comment"># 5</span></code></pre>
+                    </div>
+                    
+                    <div class="function-example">
+                        <h3>// Стрелочные функции</h3>
+                        <pre><code><span class="keyword">var</span> square = (x) => x * x
+<span class="keyword">echo</span>(square(<span class="number">5</span>))  <span class="comment"># 25</span>
+
+<span class="keyword">var</span> greet = (name) => <span class="string">"Hi, "</span> + name
+<span class="keyword">echo</span>(greet(<span class="string">"Alice"</span>))</code></pre>
+                    </div>
+                    
+                    <div class="function-example">
+                        <h3>// Параметры по умолчанию</h3>
+                        <pre><code><span class="keyword">func</span> greet(name, msg=<span class="string">"Hello"</span>) {
+    <span class="keyword">ret</span> msg + <span class="string">", "</span> + name
+}
+
+<span class="keyword">echo</span>(greet(<span class="string">"Bob"</span>))
+<span class="keyword">echo</span>(greet(<span class="string">"Bob"</span>, <span class="string">"Hi"</span>))</code></pre>
+                    </div>
+                    
+                    <div class="function-example">
+                        <h3>// Рекурсия</h3>
+                        <pre><code><span class="keyword">func</span> factorial(n) {
+    <span class="keyword">if</span> n <= <span class="number">1</span> { <span class="keyword">ret</span> <span class="number">1</span> }
+    <span class="keyword">ret</span> n * factorial(n - <span class="number">1</span>)
+}
+
+<span class="keyword">echo</span>(factorial(<span class="number">5</span>))  <span class="comment"># 120</span>
+
+<span class="comment"># Осторожно: может вызвать stack overflow</span>
+<span class="comment"># и разрушить вашу карьеру</span></code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- More Documentation Sections -->
+        <section id="stdlib" class="section stdlib">
+            <div class="container">
+                <h2 class="section-title"><span class="title-bracket">[</span> Библиотека <span class="title-bracket">]</span></h2>
+                <p class="section-subtitle">// 95+ функций для решения любых задач</p>
+
+                <div class="stdlib-grid">
+                    <div class="lib-category">
+                        <div class="category-icon">📝</div>
+                        <h3>String</h3>
+                        <ul>
+                            <li><code>str_upper()</code></li>
+                            <li><code>str_lower()</code></li>
+                            <li><code>str_split()</code></li>
+                            <li><code>str_join()</code></li>
+                            <li><code>str_replace()</code></li>
+                            <li><code>str_contains()</code></li>
+                        </ul>
+                    </div>
+
+                    <div class="lib-category">
+                        <div class="category-icon">🔢</div>
+                        <h3>Math</h3>
+                        <ul>
+                            <li><code>math_pi()</code></li>
+                            <li><code>math_sin()</code></li>
+                            <li><code>math_cos()</code></li>
+                            <li><code>math_sqrt()</code></li>
+                            <li><code>math_pow()</code></li>
+                            <li><code>math_round()</code></li>
+                        </ul>
+                    </div>
+
+                    <div class="lib-category">
+                        <div class="category-icon">📄</div>
+                        <h3>File</h3>
+                        <ul>
+                            <li><code>file_read()</code></li>
+                            <li><code>file_write()</code></li>
+                            <li><code>file_exists()</code></li>
+                            <li><code>file_delete()</code></li>
+                        </ul>
+                    </div>
+
+                    <div class="lib-category">
+                        <div class="category-icon">🔐</div>
+                        <h3>Crypto</h3>
+                        <ul>
+                            <li><code>crypto_md5()</code></li>
+                            <li><code>crypto_sha256()</code></li>
+                            <li><code>crypto_hash()</code></li>
+                        </ul>
+                    </div>
+
+                    <div class="lib-category">
+                        <div class="category-icon">📦</div>
+                        <h3>JSON</h3>
+                        <ul>
+                            <li><code>json_parse()</code></li>
+                            <li><code>json_stringify()</code></li>
+                        </ul>
+                        <p class="lib-desc">Парсинг и сериализация JSON</p>
+                    </div>
+
+                    <div class="lib-category">
+                        <div class="category-icon">🖥️</div>
+                        <h3>OS</h3>
+                        <ul>
+                            <li><code>os_getenv()</code></li>
+                            <li><code>os_system()</code></li>
+                            <li><code>os_cwd()</code></li>
+                            <li><code>os_mkdir()</code></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Community Section -->
+        <section id="community" class="section community">
+            <div class="container">
+                <h2 class="section-title"><span class="title-bracket">[</span> Сообщество <span class="title-bracket">]</span></h2>
+                <p class="section-subtitle">// Присоединяйтесь к разработчикам Mirror</p>
+
+                <div class="community-grid">
+                    <div class="community-card">
+                        <h3>📚 Документация</h3>
+                        <p>Полная документация по языку и стандартной библиотеке</p>
+                        <a href="docs.html" class="btn btn-secondary">Читать →</a>
+                    </div>
+                    
+                    <div class="community-card">
+                        <h3>💬 Чат</h3>
+                        <p>Общайтесь с другими разработчиками, задавайте вопросы</p>
+                        <a href="#" class="btn btn-secondary">Войти →</a>
+                    </div>
+                    
+                    <div class="community-card">
+                        <h3>🐛 GitHub</h3>
+                        <p>Сообщайте об ошибках, предлагайте улучшения</p>
+                        <a href="#" class="btn btn-secondary">Перейти →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>&lt;Mirror/&gt;</h3>
+                    <p>Современный язык программирования</p>
+                    <p class="footer-quote">// Код должен приносить радость</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Навигация</h4>
+                    <ul>
+                        <li><a href="#philosophy">#философия</a></li>
+                        <li><a href="#features">#возможности</a></li>
+                        <li><a href="#download">#скачать</a></li>
+                        <li><a href="#humor">#юмор</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Ресурсы</h4>
+                    <ul>
+                        <li><a href="#">Документация</a></li>
+                        <li><a href="#">API Reference</a></li>
+                        <li><a href="#">Руководства</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Сообщество</h4>
+                    <ul>
+                        <li><a href="#">GitHub</a></li>
+                        <li><a href="#">Discord</a></li>
+                        <li><a href="#">Telegram</a></li>
+                        <li><a href="#">Twitter</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Mirror Language. Open Source Project.</p>
+                <p class="footer-tagline">// Создано с ❤️ и ☕ для разработчиков</p>
+                <p class="footer-joke">// P.S. Я не использую eval()</p>
+                <p class="footer-wisdom">// 🪞 Зеркало отражает ваш интеллект</p>
+                <p class="footer-joke">// P.P.S. Если вы читаете это, у вас слишком много свободного времени</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="js/main.js"></script>
+</body>
+</html>
