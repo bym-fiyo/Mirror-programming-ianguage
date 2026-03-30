@@ -1455,7 +1455,6 @@ body {
 }
 
 .datatype-card code {
-    user-select: all;
     color: var(--text-primary);
     font-family: 'Consolas', monospace;
     font-size: 0.85rem;
@@ -1559,7 +1558,6 @@ body {
 }
 
 .flow-card code {
-    user-select: all;
     color: var(--text-primary);
     font-family: 'Consolas', monospace;
     font-size: 0.85rem;
@@ -1598,7 +1596,6 @@ body {
 }
 
 .function-example code {
-    user-select: all;
     color: var(--text-primary);
     font-family: 'Consolas', monospace;
     font-size: 0.85rem;
@@ -1668,8 +1665,4 @@ body {
     .terminal-window {
         margin: 1rem;
     }
-}
-
-* {
-    user-select: none;
 }
