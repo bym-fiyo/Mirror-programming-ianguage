@@ -95,6 +95,7 @@
                 <li><a href="#operators"><span class="nav-hash">#</span>операторы</a></li>
                 <li><a href="#controlflow"><span class="nav-hash">#</span>поток</a></li>
                 <li><a href="#functions"><span class="nav-hash">#</span>функции</a></li>
+                <li><a href="#mirrorfunc"><span class="nav-hash">#</span>mirrorfunc</a></li>
                 <li><a href="#stdlib"><span class="nav-hash">#</span>библиотека</a></li>
                 <li><a href="#community"><span class="nav-hash">#</span>сообщество</a></li>
             </ul>
@@ -873,7 +874,107 @@ mirror --version</code></pre>
                 </div>
             </div>
         </section>
-        
+
+        <!-- Mirror Functions Section -->
+        <section id="mirrorfunc" class="section mirrorfunc">
+            <div class="container">
+                <h2 class="section-title"><span class="title-bracket">[</span> Зеркальные функции <span class="title-bracket">]</span></h2>
+                <p class="section-subtitle">// Уникальная особенность Mirror — выполнение в обратном порядке</p>
+
+                <div class="mirrorfunc-intro">
+                    <div class="mirror-badge">🪞</div>
+                    <p class="lead">
+                        Mirror — первый язык программирования с поддержкой <strong>зеркальных функций</strong>.
+                        Они выполняют код в <span class="highlight">обратном хронологическом порядке</span> — 
+                        от последнего оператора к первому.
+                    </p>
+                </div>
+
+                <div class="mirrorfunc-showcase">
+                    <div class="mirror-comparison">
+                        <div class="comparison-side">
+                            <h4>// Обычная функция</h4>
+                            <pre><code><span class="keyword">func</span> normal():
+    <span class="keyword">echo</span>(<span class="string">"first"</span>)
+    <span class="keyword">echo</span>(<span class="string">"second"</span>)
+    <span class="keyword">echo</span>(<span class="string">"third"</span>)
+
+normal()
+<span class="comment"># Вывод:</span>
+<span class="comment"># first</span>
+<span class="comment"># second</span>
+<span class="comment"># third</span></code></pre>
+                        </div>
+                        <div class="comparison-side">
+                            <h4>// Зеркальная функция</h4>
+                            <pre><code><span class="keyword">mirrorfunc</span> mirror():
+    <span class="keyword">echo</span>(<span class="string">"first"</span>)
+    <span class="keyword">echo</span>(<span class="string">"second"</span>)
+    <span class="keyword">echo</span>(<span class="string">"third"</span>)
+
+mirror()
+<span class="comment"># Вывод:</span>
+<span class="comment"># third</span>
+<span class="comment"># second</span>
+<span class="comment"># first</span></code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mirrorfunc-features">
+                    <h3>// Когда использовать mirrorfunc?</h3>
+                    <div class="features-cards">
+                        <div class="feature-card">
+                            <h4>🔄 Обратные операции</h4>
+                            <p>Автоматическое выполнение действий в обратном порядке — идеально для отмены операций, rollback транзакций, очистки ресурсов.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h4>🎯 Декларативный код</h4>
+                            <p>Описывайте логику в естественном порядке, а выполнение произойдёт зеркально — полезно для стековых операций.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h4>🧪 Тестирование</h4>
+                            <p>Тестируйте инварианты: создайте состояние и проверьте обратное разрушение — отличный способ отладки.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h4>🎨 Креативное программирование</h4>
+                            <p>Создавайте необычные алгоритмы и визуальные эффекты с помощью обратного выполнения.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mirrorfunc-example">
+                    <h3>// Практический пример: управление ресурсами</h3>
+                    <pre><code><span class="comment"># Зеркальная функция для очистки ресурсов</span>
+<span class="keyword">mirrorfunc</span> cleanup():
+    <span class="keyword">echo</span>(<span class="string">"Closing file..."</span>)
+    <span class="keyword">echo</span>(<span class="string">"Releasing memory..."</span>)
+    <span class="keyword">echo</span>(<span class="string">"Disconnecting from DB..."</span>)
+    <span class="keyword">echo</span>(<span class="string">"Cleanup complete!"</span>)
+
+cleanup()
+<span class="comment"># Вывод:</span>
+<span class="comment"># Cleanup complete!</span>
+<span class="comment"># Disconnecting from DB...</span>
+<span class="comment"># Releasing memory...</span>
+<span class="comment"># Closing file...</span></code></pre>
+                </div>
+
+                <div class="mirrorfunc-syntax">
+                    <h3>// Синтаксис</h3>
+                    <pre><code><span class="keyword">mirrorfunc</span> function_name(param1, param2):
+    <span class="comment"># Тело функции</span>
+    <span class="comment"># Выполняется снизу вверх</span>
+    <span class="keyword">ret</span> value  <span class="comment"># Возврат тоже работает</span></code></pre>
+                    
+                    <div class="note">
+                        <strong>💡 Важно:</strong> Зеркальные функции используют ключевое слово <code>mirrorfunc</code> (слитно).
+                        Отступы работают так же, как в обычных функциях — 4 пробела на уровень вложенности.
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- More Documentation Sections -->
         <section id="stdlib" class="section stdlib">
             <div class="container">

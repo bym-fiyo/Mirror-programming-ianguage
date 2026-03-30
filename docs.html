@@ -431,6 +431,7 @@
                 <li><a href="#operators">Операторы</a></li>
                 <li><a href="#control">Управление потоком</a></li>
                 <li><a href="#functions">Функции</a></li>
+                <li><a href="#mirrorfunc">Зеркальные функции</a></li>
                 <li><a href="#arrays">Массивы</a></li>
                 <li><a href="#dicts">Словари</a></li>
                 <li><a href="#strings">Строки</a></li>
@@ -813,7 +814,94 @@ x--         <span class="comment"># Декремент</span></code></pre>
 
 <span class="keyword">echo</span>(factorial(<span class="number">5</span>))  <span class="comment"># 120</span></code></pre>
             </section>
-            
+
+            <!-- Зеркальные функции -->
+            <section id="mirrorfunc">
+                <h2>🪞 Зеркальные функции (mirrorfunc)</h2>
+                
+                <div class="note">
+                    <strong>💡 Новинка!</strong> Mirror — первый язык программирования с поддержкой зеркальных функций, 
+                    выполняющих код в обратном порядке.
+                </div>
+
+                <h3>Что такое mirrorfunc?</h3>
+                <p><strong>Зеркальные функции</strong> выполняют операторы своего тела в обратном хронологическом порядке — 
+                от последнего к первому. Это уникальная особенность языка Mirror.</p>
+
+                <h3>Синтаксис</h3>
+                <pre><code><span class="keyword">mirrorfunc</span> function_name(param1, param2):
+    <span class="comment"># Оператор 1</span>
+    <span class="comment"># Оператор 2</span>
+    <span class="comment"># Оператор 3</span>
+    <span class="keyword">ret</span> value</code></pre>
+
+                <h3>Пример использования</h3>
+                <div class="example">
+                    <div class="example-title">Сравнение обычной и зеркальной функции</div>
+                    <pre><code><span class="comment"># Обычная функция</span>
+<span class="keyword">func</span> normal():
+    <span class="keyword">echo</span>(<span class="string">"first"</span>)
+    <span class="keyword">echo</span>(<span class="string">"second"</span>)
+    <span class="keyword">echo</span>(<span class="string">"third"</span>)
+
+<span class="comment"># Зеркальная функция</span>
+<span class="keyword">mirrorfunc</span> mirror():
+    <span class="keyword">echo</span>(<span class="string">"first"</span>)
+    <span class="keyword">echo</span>(<span class="string">"second"</span>)
+    <span class="keyword">echo</span>(<span class="string">"third"</span>)
+
+normal()
+<span class="comment"># Вывод:</span>
+<span class="comment"># first</span>
+<span class="comment"># second</span>
+<span class="comment"># third</span>
+
+mirror()
+<span class="comment"># Вывод:</span>
+<span class="comment"># third</span>
+<span class="comment"># second</span>
+<span class="comment"># first</span></code></pre>
+                </div>
+
+                <h3>Когда использовать?</h3>
+                <ul>
+                    <li><strong>🔄 Обратные операции</strong> — отмена действий, rollback транзакций</li>
+                    <li><strong>🧹 Очистка ресурсов</strong> — закрытие файлов, освобождение памяти</li>
+                    <li><strong>🧪 Тестирование</strong> — проверка инвариантов при разрушении состояния</li>
+                    <li><strong>🎨 Креативное программирование</strong> — необычные алгоритмы и эффекты</li>
+                </ul>
+
+                <h3>Практический пример</h3>
+                <div class="example">
+                    <div class="example-title">Управление ресурсами</div>
+                    <pre><code><span class="comment"># Зеркальная функция для очистки</span>
+<span class="keyword">mirrorfunc</span> cleanup():
+    <span class="keyword">echo</span>(<span class="string">"Closing file..."</span>)
+    <span class="keyword">echo</span>(<span class="string">"Releasing memory..."</span>)
+    <span class="keyword">echo</span>(<span class="string">"Disconnecting..."</span>)
+
+cleanup()
+<span class="comment"># Вывод:</span>
+<span class="comment"># Disconnecting...</span>
+<span class="comment"># Releasing memory...</span>
+<span class="comment"># Closing file...</span></code></pre>
+                </div>
+
+                <h3>Возврат значения</h3>
+                <pre><code><span class="keyword">mirrorfunc</span> reverse_add(a, b):
+    <span class="keyword">echo</span>(<span class="string">"Computing..."</span>)
+    <span class="keyword">ret</span> a + b
+
+<span class="keyword">var</span> result = reverse_add(<span class="number">2</span>, <span class="number">3</span>)
+<span class="comment"># Вывод: Computing...</span>
+<span class="comment"># result = 5</span></code></pre>
+
+                <div class="tip">
+                    <strong>💡 Совет:</strong> Зеркальные функции используют ключевое слово <code>mirrorfunc</code> (слитно). 
+                    Отступы работают так же, как в обычных функциях — 4 пробела на уровень вложенности.
+                </div>
+            </section>
+
             <!-- Массивы -->
             <section id="arrays">
                 <h2>📚 Массивы</h2>
