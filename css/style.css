@@ -50,9 +50,6 @@ body {
     overflow-x: hidden;
 }
 
-code {
-    user-select: all;
-}
 /* Background Grid Effect */
 .bg-grid {
     position: fixed;
@@ -1680,4 +1677,8 @@ code {
     .terminal-window {
         margin: 1rem;
     }
+}
+
+code, pre {
+    user-select: all;
 }
