@@ -96,6 +96,7 @@
                 <li><a href="#controlflow"><span class="nav-hash">#</span>поток</a></li>
                 <li><a href="#functions"><span class="nav-hash">#</span>функции</a></li>
                 <li><a href="#mirrorfunc"><span class="nav-hash">#</span>mirrorfunc</a></li>
+                <li><a href="#macros"><span class="nav-hash">#</span>макросы</a></li>
                 <li><a href="#stdlib"><span class="nav-hash">#</span>библиотека</a></li>
                 <li><a href="#community"><span class="nav-hash">#</span>сообщество</a></li>
             </ul>
@@ -970,6 +971,124 @@ cleanup()
                     <div class="note">
                         <strong>💡 Важно:</strong> Зеркальные функции используют ключевое слово <code>mirrorfunc</code> (слитно).
                         Отступы работают так же, как в обычных функциях — 4 пробела на уровень вложенности.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Macros Section -->
+        <section id="macros" class="section macros">
+            <div class="container">
+                <h2 class="section-title"><span class="title-bracket">[</span> Макросы <span class="title-bracket">]</span></h2>
+                <p class="section-subtitle">// Метапрограммирование для генерации кода</p>
+
+                <div class="macros-intro">
+                    <div class="macro-badge">🔧</div>
+                    <p class="lead">
+                        <strong>Макросы</strong> — это мощный инструмент для создания кода, который генерирует другой код.
+                        В отличие от функций, макросы выполняют свою логику <span class="highlight">до выполнения программы</span>.
+                    </p>
+                </div>
+
+                <div class="macro-comparison">
+                    <div class="comparison-grid">
+                        <div class="comparison-card">
+                            <h4>// Функция</h4>
+                            <pre><code><span class="keyword">func</span> add(a, b):
+    <span class="keyword">ret</span> a + b
+
+<span class="keyword">var</span> result = add(<span class="number">2</span>, <span class="number">3</span>)
+<span class="comment"># Выполняется во время работы</span></code></pre>
+                        </div>
+                        <div class="comparison-card">
+                            <h4>// Макрос</h4>
+                            <pre><code><span class="keyword">macro</span> debug(name):
+    <span class="keyword">echo</span>(<span class="string">"DEBUG: "</span> + name)
+    <span class="keyword">ret</span> name
+
+debug!(x)
+<span class="comment"># Разворачивается до запуска</span></code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="macro-features">
+                    <h3>// Когда использовать макросы?</h3>
+                    <div class="features-cards">
+                        <div class="feature-card">
+                            <h4>🐛 Отладка</h4>
+                            <p>Автоматическое логирование с именами переменных без повторения кода.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h4>📝 DSL</h4>
+                            <p>Создание предметно-ориентированных языков для конкретных задач.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h4>🔄 Генерация кода</h4>
+                            <p>Автоматическое создание шаблонного кода из параметров.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h4>⚡ Оптимизация</h4>
+                            <p>Вычисления на этапе компиляции для ускорения выполнения.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="macro-examples">
+                    <h3>// Примеры использования</h3>
+                    
+                    <div class="macro-example">
+                        <h4>🐛 Макрос отладки</h4>
+                        <pre><code><span class="keyword">macro</span> debug(var_name):
+    <span class="keyword">echo</span>(<span class="string">"DEBUG: "</span> + var_name + <span class="string">" = "</span>)
+    <span class="keyword">ret</span> var_name
+
+<span class="keyword">var</span> x = <span class="number">42</span>
+debug!(x)
+<span class="comment"># Вывод:</span>
+<span class="comment"># DEBUG: x = </span>
+<span class="comment"># 42</span></code></pre>
+                    </div>
+
+                    <div class="macro-example">
+                        <h4>🔀 Макрос unless (обратный if)</h4>
+                        <pre><code><span class="keyword">macro</span> unless(condition, code):
+    <span class="keyword">if</span> <span class="keyword">not</span> condition:
+        <span class="keyword">ret</span> code
+    <span class="keyword">ret</span> nil
+
+<span class="keyword">var</span> age = <span class="number">15</span>
+unless!(age >= <span class="number">18</span>, <span class="keyword">echo</span>(<span class="string">"Minor"</span>))
+<span class="comment"># Вывод: Minor</span></code></pre>
+                    </div>
+
+                    <div class="macro-example">
+                        <h4>🔁 Макрос repeat</h4>
+                        <pre><code><span class="keyword">macro</span> repeat(n, code):
+    <span class="keyword">for</span> i <span class="keyword">in</span> range(n):
+        code
+    <span class="keyword">ret</span> nil
+
+repeat!(<span class="number">3</span>, <span class="keyword">echo</span>(<span class="string">"Hello!"</span>))
+<span class="comment"># Вывод: Hello! (3 раза)</span></code></pre>
+                    </div>
+                </div>
+
+                <div class="macro-syntax">
+                    <h3>// Синтаксис</h3>
+                    <pre><code><span class="keyword">macro</span> function_name(param1, param2):
+    <span class="comment"># Тело макроса</span>
+    <span class="comment"># Использует параметры как переменные</span>
+    <span class="keyword">ret</span> result  <span class="comment"># Возврат значения</span></code></pre>
+                    
+                    <div class="note">
+                        <strong>💡 Важно:</strong> Макросы вызываются с восклицательным знаком: <code>name!()</code>.
+                        Это отличает их от обычных функций и подчёркивает, что код разворачивается до выполнения.
+                    </div>
+
+                    <div class="warning">
+                        <strong>⚠️ Внимание:</strong> Аргументы макроса вычисляются <em>до</em> передачи в макрос.
+                        Для ленивого вычисления используйте другие паттерны.
                     </div>
                 </div>
             </div>

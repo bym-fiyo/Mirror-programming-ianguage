@@ -432,6 +432,7 @@
                 <li><a href="#control">Управление потоком</a></li>
                 <li><a href="#functions">Функции</a></li>
                 <li><a href="#mirrorfunc">Зеркальные функции</a></li>
+                <li><a href="#macros">Макросы</a></li>
                 <li><a href="#arrays">Массивы</a></li>
                 <li><a href="#dicts">Словари</a></li>
                 <li><a href="#strings">Строки</a></li>
@@ -899,6 +900,96 @@ cleanup()
                 <div class="tip">
                     <strong>💡 Совет:</strong> Зеркальные функции используют ключевое слово <code>mirrorfunc</code> (слитно). 
                     Отступы работают так же, как в обычных функциях — 4 пробела на уровень вложенности.
+                </div>
+            </section>
+
+            <!-- Макросы -->
+            <section id="macros">
+                <h2>🔧 Макросы (macro)</h2>
+                
+                <div class="note">
+                    <strong>💡 Новинка!</strong> Макросы позволяют создавать код, который генерирует другой код на этапе выполнения.
+                </div>
+
+                <h3>Что такое макросы?</h3>
+                <p><strong>Макросы</strong> — это механизм метапрограммирования, который позволяет писать код, выполняющийся <em>до</em> основной программы. 
+                В отличие от функций, макросы разворачиваются в момент вызова и могут генерировать код динамически.</p>
+
+                <h3>Синтаксис</h3>
+                <pre><code><span class="keyword">macro</span> name(param1, param2):
+    <span class="comment"># Тело макроса</span>
+    <span class="comment"># Использует параметры как переменные</span>
+    <span class="keyword">ret</span> result</code></pre>
+
+                <h3>Вызов макросов</h3>
+                <p>Макросы вызываются с восклицательным знаком <code>!</code> перед скобками:</p>
+                <pre><code>name!(arg1, arg2)</code></pre>
+
+                <h3>Пример использования</h3>
+                <div class="example">
+                    <div class="example-title">Макрос отладки</div>
+                    <pre><code><span class="comment"># Макрос для отладки переменных</span>
+<span class="keyword">macro</span> debug(var_name):
+    <span class="keyword">echo</span>(<span class="string">"DEBUG: "</span> + var_name + <span class="string">" = "</span>)
+    <span class="keyword">ret</span> var_name
+
+<span class="keyword">var</span> x = <span class="number">42</span>
+debug!(x)
+<span class="comment"># Вывод:</span>
+<span class="comment"># DEBUG: x = </span>
+<span class="comment"># 42</span></code></pre>
+                </div>
+
+                <h3>Макрос unless</h3>
+                <div class="example">
+                    <div class="example-title">Обратный if</div>
+                    <pre><code><span class="keyword">macro</span> unless(condition, code):
+    <span class="keyword">if</span> <span class="keyword">not</span> condition:
+        <span class="keyword">ret</span> code
+    <span class="keyword">ret</span> nil
+
+<span class="keyword">var</span> age = <span class="number">15</span>
+unless!(age >= <span class="number">18</span>, <span class="keyword">echo</span>(<span class="string">"Minor"</span>))
+<span class="comment"># Вывод: Minor</span></code></pre>
+                </div>
+
+                <h3>Макрос repeat</h3>
+                <div class="example">
+                    <div class="example-title">Повторение кода</div>
+                    <pre><code><span class="keyword">macro</span> repeat(n, code):
+    <span class="keyword">for</span> i <span class="keyword">in</span> range(n):
+        code
+    <span class="keyword">ret</span> nil
+
+repeat!(<span class="number">3</span>, <span class="keyword">echo</span>(<span class="string">"Hello!"</span>))
+<span class="comment"># Вывод: Hello! (3 раза)</span></code></pre>
+                </div>
+
+                <h3>Когда использовать макросы?</h3>
+                <ul>
+                    <li><strong>🐛 Отладка</strong> — автоматическое логирование с именами переменных</li>
+                    <li><strong>📝 DSL</strong> — создание предметно-ориентированных языков</li>
+                    <li><strong>🔄 Генерация кода</strong> — автоматическое создание шаблонного кода</li>
+                    <li><strong>⚡ Оптимизация</strong> — вычисления на этапе компиляции</li>
+                </ul>
+
+                <h3>Макросы vs Функции</h3>
+                <table>
+                    <tr><th>Характеристика</th><th>Функция</th><th>Макрос</th></tr>
+                    <tr><td>Когда выполняется</td><td>Runtime</td><td>До выполнения</td></tr>
+                    <tr><td>Что принимает</td><td>Значения</td><td>Код (как значения)</td></tr>
+                    <tr><td>Вызов</td><td><code>name()</code></td><td><code>name!()</code></td></tr>
+                    <tr><td>Возврат</td><td><code>ret value</code></td><td><code>ret value</code></td></tr>
+                </table>
+
+                <div class="warning">
+                    <strong>⚠️ Важно:</strong> Аргументы макроса вычисляются <em>до</em> передачи в макрос.
+                    Это означает, что код аргумента выполняется один раз перед вызовом макроса.
+                </div>
+
+                <div class="tip">
+                    <strong>💡 Совет:</strong> Используйте макросы для устранения дублирования кода и создания выразительных DSL.
+                    Но не злоупотребляйте — слишком много макросов могут усложнить понимание кода.
                 </div>
             </section>
 
