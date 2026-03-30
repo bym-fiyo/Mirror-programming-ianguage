@@ -238,6 +238,178 @@
         ::-webkit-scrollbar-thumb:hover {
             background: #00d9ff;
         }
+
+        /* ================================
+           RESPONSIVE / MOBILE STYLES
+           ================================ */
+
+        /* Tablet */
+        @media (max-width: 1024px) {
+            .container {
+                padding: 30px;
+            }
+
+            nav.toc ul {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            h3 {
+                font-size: 1.2em;
+            }
+
+            nav.toc {
+                padding: 15px;
+            }
+
+            nav.toc ul {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 8px;
+            }
+
+            nav.toc a {
+                font-size: 0.9em;
+            }
+
+            section {
+                margin-bottom: 30px;
+                padding-bottom: 20px;
+            }
+
+            pre {
+                padding: 15px;
+                font-size: 0.85em;
+            }
+
+            code {
+                font-size: 0.9em;
+                padding: 2px 6px;
+            }
+
+            table {
+                font-size: 0.9em;
+            }
+
+            th, td {
+                padding: 10px 8px;
+            }
+
+            .note, .warning, .tip {
+                padding: 12px;
+                font-size: 0.9em;
+            }
+
+            .example {
+                padding: 12px;
+            }
+
+            footer {
+                padding: 20px;
+            }
+        }
+
+        /* Small mobile */
+        @media (max-width: 480px) {
+            .container {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+
+            h2 {
+                font-size: 1.3em;
+            }
+
+            h3 {
+                font-size: 1.1em;
+            }
+
+            nav.toc ul {
+                grid-template-columns: 1fr;
+            }
+
+            pre {
+                padding: 10px;
+                font-size: 0.8em;
+                overflow-x: auto;
+            }
+
+            code {
+                font-size: 0.85em;
+            }
+
+            table {
+                display: block;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            th, td {
+                padding: 8px 6px;
+                white-space: nowrap;
+            }
+
+            ul, ol {
+                margin-left: 20px;
+            }
+
+            .note, .warning, .tip, .example {
+                padding: 10px;
+                font-size: 0.85em;
+            }
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                background: white;
+                color: black;
+                padding: 0;
+            }
+
+            .container {
+                background: white;
+                box-shadow: none;
+                padding: 0;
+            }
+
+            nav.toc, footer {
+                display: none;
+            }
+
+            pre, code {
+                background: #f5f5f5;
+                color: black;
+            }
+
+            a {
+                color: black;
+            }
+
+            section {
+                page-break-inside: avoid;
+            }
+        }
     </style>
 </head>
 <body>

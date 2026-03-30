@@ -1,17 +1,37 @@
 // Mirror Language Website Scripts
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Mobile menu toggle
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navMenu = document.querySelector('.nav-menu');
+
+    if (mobileMenuBtn && navMenu) {
+        mobileMenuBtn.addEventListener('click', function() {
+            this.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        const navLinks = document.querySelectorAll('.nav-menu a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenuBtn.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+    }
+
     // Smooth scrolling for navigation
     const navLinks = document.querySelectorAll('a[href^="#"]');
-    
+
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             const targetId = this.getAttribute('href');
             if (targetId === '#') return;
-            
+
             e.preventDefault();
             const targetSection = document.querySelector(targetId);
-            
+
             if (targetSection) {
                 targetSection.scrollIntoView({
                     behavior: 'smooth',
@@ -112,12 +132,6 @@ function trackDownload() {
 
 // Initialize download tracking
 trackDownload();
-
-// Mobile menu toggle (for future implementation)
-function toggleMobileMenu() {
-    const navMenu = document.querySelector('.nav-menu');
-    navMenu.classList.toggle('active');
-}
 
 // Syntax highlighting helper
 function highlightSyntax(code) {
