@@ -1,9 +1,5 @@
 /* Mirror Language Website Styles - Mirror Theme */
 
-* {
-    user-select: none;
-}
-
 :root {
     /* Mirror Theme - Silver, Blue, Reflective */
     --primary: #0ea5e9;        /* Sky blue - like mirror glass */
@@ -1679,6 +1675,6 @@ body {
     }
 }
 
-code, pre {
-    user-select: all;
+* {
+    user-select: none;
 }
