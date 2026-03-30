@@ -50,6 +50,9 @@ body {
     overflow-x: hidden;
 }
 
+code {
+    user-select: all;
+}
 /* Background Grid Effect */
 .bg-grid {
     position: fixed;
@@ -639,6 +642,7 @@ body {
 }
 
 .pyqt-note code {
+    user-select: all;
     color: var(--primary-light);
     font-family: 'Consolas', monospace;
 }
@@ -685,6 +689,7 @@ body {
 }
 
 .install-tab code {
+    user-select: all;
     color: var(--text-secondary);
     font-family: 'Consolas', monospace;
     font-size: 0.9rem;
@@ -747,6 +752,7 @@ body {
 }
 
 .code-window code {
+    user-select: all;
     font-family: 'Consolas', monospace;
     font-size: 0.95rem;
     line-height: 1.8;
@@ -779,6 +785,7 @@ body {
 }
 
 .keyword-list code {
+    user-select: all;
     background: var(--primary);
     color: var(--dark);
     padding: 0.25rem 0.75rem;
@@ -852,6 +859,7 @@ body {
 }
 
 .lib-category code {
+    user-select: all;
     background: var(--dark-light);
     color: var(--primary-light);
     padding: 0.25rem 0.5rem;
